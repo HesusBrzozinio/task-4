@@ -1,11 +1,12 @@
-1) Utwórz interfejs zdalny EJB dla serwisu BookServiceBean
+Utwórz konstroler o zakresie sesyjnym.
 
-2) U¿ywaj¹c funkcji œrodowiska Eclipse wyeksportuj klasy artefaktu sampleapp-core do pakczki typu JAR (skompiowane klasy + kod Ÿród³owy) - zapisz plik na dysku
+W ramach kontrolera utwórz mapê zawieraj¹c¹ nazwê jêzyka jako klucz oraz kod lokali jako wartoœæ
 
-3) Utwórz nowy projekt EJB u¿ywaj¹c domyœlnych wartoœci kreatora
-U¿ywaj¹c funkcji œrodowiska Eclipse zaktualizuj classpath dodaj¹c do projektu bibliotekê jboss-client.jar z katalogu {wildfly_home}\bin\client oraz dodaj¹c wyeksportowany wczeœniej JAR klasami artefaktu sampleapp-core
+Utwórz metodê nas³uchuj¹c¹ zdarzeñ typu ValueChangeListener (parametr metody), motoda zwraca void.
 
-4) W utworzonym projekcie umieœæ klasê EJBClient.
 
-5) Korzystaj¹c z logów serwera odnajdŸ adres pod jakim zarejestrowany jest interfejs zdalny dla us³ugi BookServiceBean i zaktualizuj wywo³anie metody lookup.
- 
+Z obiektu zdarzenia pobierz wartoœæ jaka zosta³a w nim umieszczona i u¿yj jej jako klucza do pobrania wartoœci. Na podstawie pobranej wartoœci utwórz obiekt klasy Locale.
+
+Pobierz instancjê klasy FacesContext z u¿yciem jej metody statycznej a nastêpnie pobierz z kontekstu UIViewRoot i umieœæ w nim obiekt Locale.
+
+Na stronie header.xhtml dodaj listê rozwijan¹ z mo¿liwymi do wyboru jêzykami (komponent selectOneMenu). Nale¿y powi¹zaæ komponent z metod¹ kontrolera nas³uhuj¹c¹ zdarzeñ. Zmiana wartoœci w liœcie powinna wywo³ywaæ wbudowan¹ javascriptow¹ metodê submit() - sprawdŸ jakimi atrybutami dysponuje komponent listy rozwijanej. 
